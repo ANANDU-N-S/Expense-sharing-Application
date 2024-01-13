@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background: var(--pp3-background, linear-gradient(113deg, #984D38 -30.3%, #222c62 58.12%));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Navbar_signup {
+    font-family: Poppins;
+    color: whitesmoke;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main_nav_cont {
+    background: var(--pp3-background, linear-gradient(113deg, #c0725d -30.3%, #343d72 58.12%));
+    ;
 }
 
-.App-link {
-  color: #61dafb;
+.Main_home_name {
+    color: #FFF;
+    font-family: Playfair Display;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main_home_sub {
+    color: rgba(255, 255, 255, 0.50);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.3px;
+}
+
+.btn_get_started {
+    background-color: #c0725d !important;
+}
+
+.login_img {
+    border-radius: 5px;
+}
+
+.signIn_card {
+    border-radius: 16.374px;
+    background: #FFF;
+}
+
+.login_label {
+    color: #263238;
+    font-family: Nunito Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 540;
+    line-height: normal;
+}
+
+.signIn_input {
+    border-radius: 21.832px;
+    border: 1.364px solid #263238;
+    background: #FFF;
+}
+
+.signIn_btn {
+    border-radius: 40.934px;
+    background: #09A0D0 !important;
+    width: 100%;
+}
+
+
+.landing_switch_btn {
+    border: 2px solid #09A0D0;
+    width: 100%;
+}
+
+
+.dash_sidebar {
+    background-color: #984D38;
+
+}
+
+.dash_sidebar_head {
+    color: rgb(255, 255, 255);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.3px;
+}
+
+.navbar_dash {
+    color: rgb(255, 255, 255);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.3px;
+
+}
+
+.nav_dash_main {
+    background-color: #222c62;
+}
+
+.dash_content {
+    color: whitesmoke;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.3px;
+
+}
+
+.list_sidebar {
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: 1px solid #222c62;
+
+    width: 100%;
+}
+
+.Expense_head {
+    color: whitesmoke;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.3px;
+}
+
+.Expense_sub_label {
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: 1px solid #222c62;
+}
+
+.Expense_sub_btn {
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: 1px solid #000000 !important;
+}
+
+.btn_expense {
+    color: #fff;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: 1px solid #e9e8e8 !important;
+
 }
