@@ -1,71 +1,61 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 
 function DashboardComponent() {
-    const data = [
-        {
-            id: 1,
-            user: 'Anandu',
-            Expense: "Electricity Bill",
-            Amount: "1000 Rs",
-            Spilit_Amount: '250 RS',
-            date: "12/01/2024",
-            Status: "pending"
-        },
-        {
-            id: 2,
-            user: 'Anusree ',
-            Expense: "Electricity Bill",
-            Amount: "1000 Rs",
-            Spilit_Amount: '250 RS',
-            date: "12/01/2024",
-            Status: "pending"
-        },
-    ]
+    const [data, setData] = useState([]);
+    const [showUser, setShowUser] = useState({});
+
+    useEffect(() => {
+        const loggedInUserData = JSON.parse(localStorage.getItem('loggedInUser')) || {};
+        setShowUser(loggedInUserData);
+    }, []);
+
+
+    const filteredExpenses = data.filter(expense => expense.member.toLowerCase() === showUser.name.toLowerCase());
+
+    const formatAmount = (amount) => {
+        const roundedAmount = Number(amount).toFixed(2);
+        const [integerPart, decimalPart] = roundedAmount.split('.');
+        return decimalPart === '00' ? integerPart : roundedAmount;
+    };
 
 
     const columns = [
         {
-            name: 'Members',
-            selector: row => row.user,
+            name: 'Member',
+            selector: (row) => row.member,
         },
         {
             name: 'Expense',
-            selector: row => row.Expense,
+            selector: (row) => row.expense,
         },
         {
-            name: 'Amount',
-            selector: row => row.Amount,
+            name: 'Spilited Amount',
+            selector: (row) => formatAmount(row.amount),
         },
-        {
-            name: 'Spilit Amount',
-            selector: row => row.Spilit_Amount,
-        },
-        {
-            name: 'Last Date',
-            selector: row => row.date,
-        },
-        {
-            name: 'Status',
-            selector: row => row.Status,
-        },
-    ]
+
+    ];
 
     const customStyles = {
         headRow: {
             style: {
                 color: '#fff',
                 backgroundColor: '#0088B4',
-                fontSize: "13px",
+                fontSize: '13px',
             },
         },
         rows: {
             style: {
-                color: "#000",
-                backgroundColor: "#fff"
-            }
+                color: '#000',
+                backgroundColor: '#fff',
+            },
         },
     };
+
+    useEffect(() => {
+        const storedData = JSON.parse(localStorage.getItem('expenses')) || [];
+        setData(storedData);
+    }, []);
 
     return (
         <div className='container'>
@@ -82,18 +72,12 @@ function DashboardComponent() {
             </div>
 
             <div className='row'>
-                <div className='col ms-5'>
-                    <DataTable
-                        columns={columns}
-                        data={data}
-                        customStyles={customStyles}
-                        pagination
-                    />
+                <div className='col ms-5 mb-5'>
+                    <DataTable columns={columns} data={filteredExpenses} customStyles={customStyles} pagination />
                 </div>
             </div>
-
         </div>
-    )
+    );
 }
 
-export default DashboardComponent
+export default DashboardComponent;

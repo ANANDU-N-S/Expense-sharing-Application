@@ -23,7 +23,7 @@ function SectionContent() {
             <div class="row text-center">
                 <div class="d-flex justify-content-center">
                     <div class="col-10 p-1 mt-5 my-5 mx-5 main_home_sub2">
-                        <button className='btn btn_get_started' onClick={() => navigate("/admin")}>Get started</button>
+                        <button className='btn btn_get_started' onClick={() => navigate("/expense/loginpage")}>Get started</button>
                     </div>
                 </div>
             </div>

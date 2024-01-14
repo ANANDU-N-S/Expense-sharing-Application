@@ -87,6 +87,16 @@ body {
 
 }
 
+.Main_logo{
+    color: rgb(255, 255, 255);
+    font-family: cursive;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.3px;
+}
+
 .dash_sidebar_head {
     color: rgb(255, 255, 255);
     font-family: Poppins;
