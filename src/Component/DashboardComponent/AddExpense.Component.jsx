@@ -135,7 +135,7 @@ function AddExpenseComponent() {
       <div className='row'>
         <div className='d-flex justify-content-center'>
           <div className='col-3 ms-5 mt-5'>
-            <button className='btn rounded-pill btn_expense' onClick={handleExpenseSubmit}>
+            <button className='btn rounded-pill btn_expense mb-5' onClick={handleExpenseSubmit}>
               Submit
             </button>
           </div>

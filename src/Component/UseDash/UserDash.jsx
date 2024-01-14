@@ -11,10 +11,7 @@ function UserDash() {
   const [selectedItem, setSelectedItem] = useState(1);
   const [showUser, setShowUser] = useState({});
 
-
-
   useEffect(() => {
-
     const loggedInUserData = JSON.parse(localStorage.getItem('loggedInUser')) || {};
     setShowUser(loggedInUserData);
   }, []);
@@ -23,24 +20,18 @@ function UserDash() {
     setSelectedItem(item);
   };
 
-
-
-
-
   useEffect(() => {
-
     setSelectedItem(1);
   }, []);
 
   const handleLogout = () => {
-
     navigate('/');
   };
 
   return (
     <div className='container-fluid'>
       <div className='row'>
-        <div className='col-md-3 col-sm-12 dash_sidebar' style={{ height: '100vh', overflowY: 'auto' }}>
+        <div className='col-md-3 col-sm-12 dash_sidebar' style={{ height: 'auto', overflowY: 'auto' }}>
           <p className='ms-5 mt-5 dash_sidebar_head'>Expense Met</p>
 
           <div className='row text-center'>
@@ -71,9 +62,9 @@ function UserDash() {
             <a className='navbar-brand ms-auto me-3 navbar_dash' href='#'>
               {showUser.name}
             </a>
-            <div className='dropdown me-5'>
+            <div className='dropdown me-3'>
               <button
-                className='btn dropdown-toggle me-5'
+                className='btn dropdown-toggle'
                 type='button'
                 id='logoutDropdown'
                 data-bs-toggle='dropdown'
@@ -83,7 +74,7 @@ function UserDash() {
               </button>
               <ul className='dropdown-menu' aria-labelledby='logoutDropdown'>
                 <li>
-                  <a className='dropdown-item me-5' onClick={handleLogout}>
+                  <a className='dropdown-item' onClick={handleLogout}>
                     <span>
                       <LuLogOut className='me-2 mb-1' />
                     </span>
